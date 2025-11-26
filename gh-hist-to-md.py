@@ -107,7 +107,7 @@ def process_prs(data):
             'state': item.get('state', '').lower(),
             'date': date,
             'url': item.get('url', ''),
-            'merged': item.get('mergedAt') is not None,
+            'merged': item.get('state', '').lower() == 'merged',
             'body': item.get('body', ''),
         })
     for repo in grouped:

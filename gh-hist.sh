@@ -105,7 +105,7 @@ gh search issues --commenter=$USERNAME --updated="$DATE_RANGE" --limit=100 \
 # PRs created
 echo "Fetching PRs created..."
 gh search prs --author=$USERNAME --created="$DATE_RANGE" --limit=100 \
-  --json repository,title,state,createdAt,mergedAt,url,body > "$OUTPUT_DIR/prs_created.json"
+  --json repository,title,state,createdAt,url,body > "$OUTPUT_DIR/prs_created.json"
 
 # PRs reviewed
 echo "Fetching PRs reviewed..."
