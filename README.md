@@ -32,7 +32,13 @@ Follow the prompts to authenticate with your GitHub account.
 ### 1. Fetch GitHub Activity
 
 ```bash
-./gh-hist.sh
+./gh-hist.sh                        # Last 7 days
+./gh-hist.sh -h                     # Show help
+./gh-hist.sh -d 14                  # Last 14 days
+./gh-hist.sh -e 2025-11-01          # 7 days ending Nov 1
+./gh-hist.sh -e 2025-11-01 -d 14    # 14 days ending Nov 1
+./gh-hist.sh -s 2025-11-01          # Nov 1 to today
+./gh-hist.sh -s 2025-11-01 -d 7     # Nov 1 to Nov 8
 ```
 
 This creates a directory `gh_YYYYMMDD/` containing:
@@ -57,9 +63,7 @@ python gh-hist-to-md.py gh_20251125 -o my_summary.md
 
 Output is a hybrid markdown file with YAML frontmatter, suitable for LLM consumption.
 
-## Configuration
+## Notes
 
-Edit `gh-hist.sh` to change:
-- `SINCE` - Date range (default: 7 days ago)
-
-Note: Username is auto-detected from your `gh auth login` session.
+- Username is auto-detected from your `gh auth login` session
+- `-s` and `-e` are mutually exclusive
