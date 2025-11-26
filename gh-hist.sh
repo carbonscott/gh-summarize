@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERNAME="carbonscott"
+USERNAME=$(gh api user --jq .login)
 SINCE=$(date -d "7 days ago" +%Y-%m-%d)
 OUTPUT_DIR="gh_$(date +%Y%m%d)"
 

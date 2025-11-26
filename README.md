@@ -60,5 +60,6 @@ Output is a hybrid markdown file with YAML frontmatter, suitable for LLM consump
 ## Configuration
 
 Edit `gh-hist.sh` to change:
-- `USERNAME` - Your GitHub username (default: carbonscott)
 - `SINCE` - Date range (default: 7 days ago)
+
+Note: Username is auto-detected from your `gh auth login` session.
