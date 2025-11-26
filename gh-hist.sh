@@ -76,8 +76,10 @@ if [[ -z "$USERNAME" ]]; then
     exit 1
 fi
 
-# Create output directory
-OUTPUT_DIR="gh_$(date +%Y%m%d)"
+# Create output directory based on date range
+SINCE_FMT=$(echo $SINCE | tr -d '-')
+END_FMT=$(echo $END | tr -d '-')
+OUTPUT_DIR="gh_${SINCE_FMT}_${END_FMT}"
 mkdir -p "$OUTPUT_DIR"
 
 echo "Fetching GitHub activity for $USERNAME"
