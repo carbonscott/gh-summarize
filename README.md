@@ -13,6 +13,9 @@ brew install gh
 # Ubuntu/Debian
 sudo apt install gh
 
+# HPC (via conda)
+conda install -c conda-forge gh
+
 # Or download from: https://cli.github.com/
 ```
 
